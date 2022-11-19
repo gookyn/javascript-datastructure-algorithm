@@ -7,6 +7,7 @@ console.log('原数组：', nums);
 /**
  * 在数组末尾添加元素
  */
+
 nums[nums.length] = 10;
 
 nums.push(11);
@@ -18,6 +19,7 @@ console.log('在数组末尾添加元素：', nums);
 /**
  * 在数组开头添加元素
  */
+
 // Array.prototype.insertFirstPosition = function (value) {
 //   for (let i = this.length; i > 0; i--) {
 //     this[i] = this[i - 1];
@@ -37,6 +39,7 @@ console.log('在数组开头添加元素：', nums);
 /**
  * 从数组末尾删除元素
  */
+
 nums.pop();
 
 console.log('从数组末尾删除元素：', nums);
@@ -44,6 +47,7 @@ console.log('从数组末尾删除元素：', nums);
 /**
  * 从数组开头删除元素
  */
+
 // Array.prototype.removeFirstPosition = function () {
 //   for (let i = 0; i < this.length; i++) {
 //     this[i] = this[i + 1];
