@@ -47,7 +47,7 @@ console.log('reduceResult: ', reduceResult); // 45
  * for...of
  */
 for (const n of nums) {
-  console.log(`for...of nums ${n}: `, n % 2 === 0 ? 'even' : 'odd');
+	console.log(`for...of nums ${n}: `, n % 2 === 0 ? 'even' : 'odd');
 }
 
 /**
@@ -70,7 +70,7 @@ console.log('entries: ', arrEntries.next().value); // [2,3]
 // 也可以循环读取
 arrEntries = nums.entries();
 for (const n of arrEntries) {
-  console.log('for...of entries: ', n);
+	console.log('for...of entries: ', n);
 }
 
 /**

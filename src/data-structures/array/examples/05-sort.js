@@ -21,18 +21,18 @@ console.log('nums sort: ', nums); // [ 1, 2, 3, 4, 5, 6 ]
  * 自定义排序
  */
 const friends = [
-  { name: 'John', age: 26 },
-  { name: 'Ana', age: 22 },
-  { name: 'Chris', age: 28 },
+	{ name: 'John', age: 26 },
+	{ name: 'Ana', age: 22 },
+	{ name: 'Chris', age: 28 },
 ];
 function comparePerson(a, b) {
-  if (a.age < b.age) {
-    return -1;
-  }
-  if (a.age > b.age) {
-    return 1;
-  }
-  return 0;
+	if (a.age < b.age) {
+		return -1;
+	}
+	if (a.age > b.age) {
+		return 1;
+	}
+	return 0;
 }
 console.log('friends sort: ', friends.sort(comparePerson));
 // [ { name: 'Ana', age: 22 },
@@ -48,12 +48,12 @@ console.log(names.sort()); // [ 'Ana', 'John', 'ana', 'john' ]
 
 names = ['Ana', 'ana', 'john', 'John'];
 function compareName(a, b) {
-  if (a.toLowerCase() < b.toLowerCase()) {
-    return -1;
-  }
-  if (a.toLowerCase() > b.toLowerCase()) {
-    return 1;
-  }
-  return 0;
+	if (a.toLowerCase() < b.toLowerCase()) {
+		return -1;
+	}
+	if (a.toLowerCase() > b.toLowerCase()) {
+		return 1;
+	}
+	return 0;
 }
 console.log('names sort: ', names.sort(compareName)); // [ 'Ana', 'ana', 'john', 'John' ]

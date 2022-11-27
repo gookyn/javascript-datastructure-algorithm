@@ -1,3 +1,4 @@
+require('mocha');
 const { expect } = require('chai');
 
 module.exports = function (Stack) {

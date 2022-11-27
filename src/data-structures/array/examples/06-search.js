@@ -16,7 +16,7 @@ console.log('lastIndexOf3: ', lastIndexOf3); // 8
  * find：根据回调函数给定的条件，从数组中查找元素，如果找到则返回第一个满足条件的元素，没有找到返回 undefined
  */
 function multipleOf3(element) {
-  return element % 3 === 0;
+	return element % 3 === 0;
 }
 
 const findNum = nums.find(multipleOf3);
