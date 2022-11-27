@@ -1,6 +1,6 @@
 const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const isEven = (x) => x % 2 === 0;
+const isEven = x => x % 2 === 0;
 
 /* ***********************************  divider  *********************************** */
 
@@ -23,7 +23,7 @@ console.log('someResult: ', someResult); // true
 /**
  * forEach：对数组中的每个元素运行给定函数，没有返回值
  */
-nums.forEach((x) => console.log(`forEach ${x}: `, x % 2 === 0));
+nums.forEach(x => console.log(`forEach ${x}: `, x % 2 === 0));
 
 /**
  * map：对数组中的每个元素运行给定函数，返回每次函数执行结果组成的数组
@@ -113,7 +113,7 @@ const nums2 = Array.from(nums);
 console.log('Array.from nums2: ', nums2); // [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 
 // 还可以传入一个过滤值的函数
-const evens = Array.from(nums, (x) => x % 2 == 0);
+const evens = Array.from(nums, x => x % 2 == 0);
 console.log('Array.from evens: ', evens); // [ false, true, false, true, false, true, false, true, false ]
 
 /**

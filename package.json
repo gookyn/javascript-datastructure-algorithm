@@ -5,7 +5,9 @@
   "scripts": {
     "test": "mocha ./test --recursive --reporter mochawesome",
     "coverage": "npm run generate-report && nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "generate-report": "nyc --report-dir coverage npm run test && nyc report --reporter=text"
+    "generate-report": "nyc --report-dir coverage npm run test && nyc report --reporter=text",
+    "lint": "eslint ./src && eslint ./test",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -25,8 +27,12 @@
   "devDependencies": {
     "chai": "^4.3.7",
     "codecov": "^3.8.3",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "mocha": "^10.1.0",
     "mochawesome": "^7.1.3",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "prettier": "2.8.0"
   }
 }
