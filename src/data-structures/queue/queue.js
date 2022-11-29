@@ -2,14 +2,14 @@ class Queue {
 	constructor() {
 		// 用对象来保存队列里的元素
 		this.items = {};
-		// 记录队首元素索引
-		this.frontIndex = 0;
-		// 记录队尾元素索引
-		this.rearIndex = 0;
+		// 头指针，若队列不为空，指向队首元素
+		this.front = 0;
+		// 尾指针，若队列不为空，指向队列尾元素的下一个位置
+		this.rear = 0;
 	}
 
 	size() {
-		return this.rearIndex - this.frontIndex;
+		return this.rear - this.front;
 	}
 
 	isEmpty() {
@@ -17,8 +17,8 @@ class Queue {
 	}
 
 	enqueue(element) {
-		this.items[this.rearIndex] = element;
-		this.rearIndex++;
+		this.items[this.rear] = element;
+		this.rear++;
 	}
 
 	dequeue() {
@@ -26,9 +26,9 @@ class Queue {
 			return undefined;
 		}
 
-		const result = this.items[this.frontIndex];
-		delete this.items[this.frontIndex];
-		this.frontIndex++;
+		const result = this.items[this.front];
+		delete this.items[this.front];
+		this.front++;
 		return result;
 	}
 
@@ -37,13 +37,13 @@ class Queue {
 			return undefined;
 		}
 
-		return this.items[this.frontIndex];
+		return this.items[this.front];
 	}
 
 	clear() {
 		this.items = {};
-		this.frontIndex = 0;
-		this.rearIndex = 0;
+		this.front = 0;
+		this.rear = 0;
 	}
 
 	toString() {
@@ -51,8 +51,8 @@ class Queue {
 			return '';
 		}
 
-		let str = `${this.items[this.frontIndex]}`;
-		for (let i = this.frontIndex + 1; i < this.rearIndex; i++) {
+		let str = `${this.items[this.front]}`;
+		for (let i = this.front + 1; i < this.rear; i++) {
 			str += `,${this.items[i]}`;
 		}
 		return str;
