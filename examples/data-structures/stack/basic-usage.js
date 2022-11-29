@@ -1,5 +1,5 @@
-// const { StackArray } = require('../stack-array');
-const { Stack } = require('../stack');
+// const StackArray = require('../../../src/data-structures/stack/stack-array');
+const Stack = require('../../../src/data-structures/stack/stack');
 
 // const stack = new StackArray();
 const stack = new Stack();

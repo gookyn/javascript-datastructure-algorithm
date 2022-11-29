@@ -1,4 +1,4 @@
-const Stack = require('../stack');
+const Stack = require('../../../src/data-structures/stack/stack');
 
 /**
  * 十进制转换其它进制
