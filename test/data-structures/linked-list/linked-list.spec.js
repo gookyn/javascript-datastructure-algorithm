@@ -193,19 +193,6 @@ describe('Linked List', () => {
 	});
 
 	/**
-	 * remove
-	 */
-	it('remove invalid elements', () => {
-		pushElements();
-
-		let element = -1;
-		expect(list.remove(element)).to.be.an('undefined');
-
-		element = 5;
-		expect(list.remove(element)).to.be.an('undefined');
-	});
-
-	/**
 	 * removeAt
 	 */
 	it('remove element at the invalid position of empty list', () => {
@@ -267,6 +254,30 @@ describe('Linked List', () => {
 
 		expect(list.getHead()).to.not.be.an('undefined');
 		expect(list.getHead().element).to.equals(1);
+	});
+
+	/**
+	 * remove
+	 */
+	it('remove invalid elements', () => {
+		pushElements();
+
+		let element = -1;
+		expect(list.remove(element)).to.be.an('undefined');
+
+		element = 5;
+		expect(list.remove(element)).to.be.an('undefined');
+	});
+
+	it('remove valid elements', () => {
+		pushElements();
+
+		let element;
+		for (let i = min; i <= max; i++) {
+			element = list.remove(i);
+			expect(element).to.not.be.an('undefined');
+			expect(element).to.equals(i);
+		}
 	});
 
 	/**
