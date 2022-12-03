@@ -1,4 +1,4 @@
-class StackArray {
+class ArrayStack {
 	constructor() {
 		// 用数组来保存栈里的元素
 		this.items = [];
@@ -33,4 +33,4 @@ class StackArray {
 	}
 }
 
-module.exports = StackArray;
+module.exports = ArrayStack;

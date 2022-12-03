@@ -1,7 +1,7 @@
-// const StackArray = require('../../../src/data-structures/stack/stack-array');
+// const ArrayStack = require('../../../src/data-structures/stack/array-stack');
 const Stack = require('../../../src/data-structures/stack/stack');
 
-// const stack = new StackArray();
+// const stack = new ArrayStack();
 const stack = new Stack();
 
 console.log(stack.isEmpty()); // true
