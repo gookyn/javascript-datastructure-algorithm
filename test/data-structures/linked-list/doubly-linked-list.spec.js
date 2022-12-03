@@ -21,27 +21,27 @@ describe('Doubly Linked List', () => {
 	}
 
 	function verifyNode(current, i) {
-		expect(current.element).to.not.be.an('undefined');
-		expect(current.element).to.be.equals(i);
+		expect(current.element).to.not.undefined;
+		expect(current.element).to.be.equal(i);
 
 		// verify next node
 		if (i < max) {
-			expect(current.next).to.not.be.an('undefined');
+			expect(current.next).to.not.undefined;
 			if (current.next) {
-				expect(current.next.element).to.equals(i + 1);
+				expect(current.next.element).to.equal(i + 1);
 			}
 		} else {
-			expect(current.next).to.be.an('undefined');
+			expect(current.next).to.undefined;
 		}
 
 		// verify previous node
 		if (i > min) {
-			expect(current.prev).to.not.be.an('undefined');
+			expect(current.prev).to.not.undefined;
 			if (current.prev) {
-				expect(current.prev.element).to.equals(i - 1);
+				expect(current.prev.element).to.equal(i - 1);
 			}
 		} else {
-			expect(current.prev).to.be.an('undefined');
+			expect(current.prev).to.undefined;
 		}
 	}
 
@@ -49,7 +49,7 @@ describe('Doubly Linked List', () => {
 		let current = list.getHead();
 
 		for (let i = min; i <= max; i++) {
-			expect(current).to.not.be.an('undefined');
+			expect(current).to.not.undefined;
 			if (current) {
 				verifyNode(current, i);
 				current = current.next;
@@ -61,7 +61,7 @@ describe('Doubly Linked List', () => {
 		let current = list.getTail();
 
 		for (let i = max; i >= min; i--) {
-			expect(current).to.not.be.an('undefined');
+			expect(current).to.not.undefined;
 			if (current) {
 				verifyNode(current, i);
 				current = current.prev;
@@ -77,8 +77,8 @@ describe('Doubly Linked List', () => {
 	it('start empty', () => {
 		expect(list.size()).to.equal(0);
 		expect(list.isEmpty()).to.equal(true);
-		expect(list.getHead()).to.be.an('undefined');
-		expect(list.getTail()).to.be.an('undefined');
+		expect(list.getHead()).to.undefined;
+		expect(list.getTail()).to.undefined;
 	});
 
 	/**
@@ -92,7 +92,7 @@ describe('Doubly Linked List', () => {
 
 		for (let i = 1; i <= max; i++) {
 			list.remove(i);
-			expect(list.size()).to.equals(max - i);
+			expect(list.size()).to.equal(max - i);
 		}
 	});
 
@@ -113,30 +113,30 @@ describe('Doubly Linked List', () => {
 	 * getHead
 	 */
 	it('return the head of list', () => {
-		expect(list.getHead()).to.be.an('undefined');
+		expect(list.getHead()).to.undefined;
 
 		list.push(1);
-		expect(list.getHead()).to.not.be.an('undefined');
-		expect(list.getHead().element).to.equals(1);
+		expect(list.getHead()).to.not.undefined;
+		expect(list.getHead().element).to.equal(1);
 	});
 
 	/**
 	 * getTail
 	 */
 	it('return the tail of list', () => {
-		expect(list.getTail()).to.be.an('undefined');
+		expect(list.getTail()).to.undefined;
 
 		list.push(1);
-		expect(list.getTail()).to.not.be.an('undefined');
-		expect(list.getTail().element).to.equals(1);
+		expect(list.getTail()).to.not.undefined;
+		expect(list.getTail().element).to.equal(1);
 	});
 
 	/**
 	 * getNodeAt
 	 */
 	it('return element at specific index: invalid position', () => {
-		expect(list.getNodeAt(-1)).to.be.an('undefined');
-		expect(list.getNodeAt(4)).to.be.an('undefined');
+		expect(list.getNodeAt(-1)).to.undefined;
+		expect(list.getNodeAt(4)).to.undefined;
 	});
 
 	it('return element at specific index', () => {
@@ -146,10 +146,10 @@ describe('Doubly Linked List', () => {
 
 		for (let i = min; i <= max; i++) {
 			node = list.getNodeAt(i - 1);
-			expect(node).to.not.be.an('undefined');
+			expect(node).to.not.undefined;
 
 			if (node) {
-				expect(node.element).to.equals(i);
+				expect(node.element).to.equal(i);
 			}
 		}
 	});
@@ -161,11 +161,11 @@ describe('Doubly Linked List', () => {
 		pushElements();
 
 		for (let i = min; i <= max; i++) {
-			expect(list.indexOf(i)).to.equals(i - 1);
+			expect(list.indexOf(i)).to.equal(i - 1);
 		}
 
-		expect(list.indexOf(min - 2)).to.equals(-1);
-		expect(list.indexOf(max + 2)).to.equals(-1);
+		expect(list.indexOf(min - 2)).to.equal(-1);
+		expect(list.indexOf(max + 2)).to.equal(-1);
 	});
 
 	/**
@@ -181,19 +181,19 @@ describe('Doubly Linked List', () => {
 	 */
 	it('insert elements at the invalid position of empty list', () => {
 		const element = 1;
-		expect(list.insert(element, 1)).to.equals(false);
+		expect(list.insert(element, 1)).to.equal(false);
 	});
 
 	it('insert elements at the invalid position of not empty list', () => {
 		const element = 1;
-		expect(list.insert(element, -1)).to.equals(false);
-		expect(list.insert(element, 0)).to.equals(true);
-		expect(list.insert(element, 2)).to.equals(false);
+		expect(list.insert(element, -1)).to.equal(false);
+		expect(list.insert(element, 0)).to.equal(true);
+		expect(list.insert(element, 2)).to.equal(false);
 	});
 
 	it('insert elements at the first position of empty list', () => {
 		const element = 1;
-		expect(list.insert(element, 0)).to.equals(true);
+		expect(list.insert(element, 0)).to.equal(true);
 
 		max = 1;
 		verifyList();
@@ -201,10 +201,10 @@ describe('Doubly Linked List', () => {
 
 	it('insert elements at the first position of not empty list', () => {
 		let element = 2;
-		expect(list.insert(element, 0)).to.equals(true);
+		expect(list.insert(element, 0)).to.equal(true);
 
 		element = 1;
-		expect(list.insert(element, 0)).to.equals(true);
+		expect(list.insert(element, 0)).to.equal(true);
 
 		max = 2;
 		verifyList();
@@ -212,13 +212,13 @@ describe('Doubly Linked List', () => {
 
 	it('insert elements at the middle position of list', () => {
 		let element = 3;
-		expect(list.insert(element, 0)).to.equals(true);
+		expect(list.insert(element, 0)).to.equal(true);
 
 		element = 1;
-		expect(list.insert(element, 0)).to.equals(true);
+		expect(list.insert(element, 0)).to.equal(true);
 
 		element = 2;
-		expect(list.insert(element, 1)).to.equals(true);
+		expect(list.insert(element, 1)).to.equal(true);
 
 		verifyList();
 	});
@@ -227,7 +227,7 @@ describe('Doubly Linked List', () => {
 		max = 5;
 
 		for (let i = 1; i <= max; i++) {
-			expect(list.insert(i, i - 1)).to.equals(true);
+			expect(list.insert(i, i - 1)).to.equal(true);
 		}
 
 		verifyList();
@@ -238,34 +238,34 @@ describe('Doubly Linked List', () => {
 	 */
 	it('remove element at the invalid position of empty list', () => {
 		let index = 0;
-		expect(list.removeAt(index)).to.be.an('undefined');
+		expect(list.removeAt(index)).to.undefined;
 
 		index = 1;
-		expect(list.removeAt(index)).to.be.an('undefined');
+		expect(list.removeAt(index)).to.undefined;
 	});
 
 	it('remove element at the invalid position of not empty list', () => {
 		pushElements();
 
 		let index = -1;
-		expect(list.removeAt(index)).to.be.an('undefined');
+		expect(list.removeAt(index)).to.undefined;
 
 		index = 5;
-		expect(list.removeAt(index)).to.be.an('undefined');
+		expect(list.removeAt(index)).to.undefined;
 	});
 
 	it('remove element at the first position of list', () => {
 		pushElements();
 
 		const index = 0;
-		expect(list.removeAt(index)).to.equals(1);
-		expect(list.removeAt(index)).to.equals(2);
+		expect(list.removeAt(index)).to.equal(1);
+		expect(list.removeAt(index)).to.equal(2);
 
-		expect(list.isEmpty()).to.equals(false);
+		expect(list.isEmpty()).to.equal(false);
 
-		expect(list.removeAt(index)).to.equals(3);
+		expect(list.removeAt(index)).to.equal(3);
 
-		expect(list.isEmpty()).to.equals(true);
+		expect(list.isEmpty()).to.equal(true);
 	});
 
 	it('remove element at the middle position of list', () => {
@@ -273,28 +273,28 @@ describe('Doubly Linked List', () => {
 		pushElements();
 
 		let index = 2;
-		expect(list.removeAt(index)).to.equals(3);
+		expect(list.removeAt(index)).to.equal(3);
 
-		expect(list.removeAt(index)).to.equals(4);
+		expect(list.removeAt(index)).to.equal(4);
 
 		index = 1;
-		expect(list.removeAt(index)).to.equals(2);
+		expect(list.removeAt(index)).to.equal(2);
 
-		expect(list.getHead()).to.not.be.an('undefined');
-		expect(list.getHead().element).to.equals(1);
+		expect(list.getHead()).to.not.undefined;
+		expect(list.getHead().element).to.equal(1);
 	});
 
 	it('remove element at the end position of list', () => {
 		pushElements();
 
 		let index = 1;
-		expect(list.removeAt(index)).to.equals(2);
+		expect(list.removeAt(index)).to.equal(2);
 
 		index = 0;
-		expect(list.removeAt(index)).to.equals(1);
+		expect(list.removeAt(index)).to.equal(1);
 
-		expect(list.getHead()).to.not.be.an('undefined');
-		expect(list.getHead().element).to.equals(3);
+		expect(list.getHead()).to.not.undefined;
+		expect(list.getHead().element).to.equal(3);
 	});
 
 	/**
@@ -304,10 +304,10 @@ describe('Doubly Linked List', () => {
 		pushElements();
 
 		let element = -1;
-		expect(list.remove(element)).to.be.an('undefined');
+		expect(list.remove(element)).to.undefined;
 
 		element = 5;
-		expect(list.remove(element)).to.be.an('undefined');
+		expect(list.remove(element)).to.undefined;
 	});
 
 	it('remove valid elements', () => {
@@ -316,8 +316,8 @@ describe('Doubly Linked List', () => {
 		let element;
 		for (let i = min; i <= max; i++) {
 			element = list.remove(i);
-			expect(element).to.not.be.an('undefined');
-			expect(element).to.equals(i);
+			expect(element).to.not.undefined;
+			expect(element).to.equal(i);
 		}
 	});
 
