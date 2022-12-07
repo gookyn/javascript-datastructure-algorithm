@@ -1,6 +1,7 @@
 require('mocha');
 const { expect } = require('chai');
 const Queue = require('../../../src/data-structures/queue/queue');
+const { CustomObj } = require('../../utils');
 
 describe('Queue', () => {
 	let queue;
@@ -104,20 +105,10 @@ describe('Queue', () => {
 	it('return string', () => {
 		expect(queue.toString()).to.equal('');
 
-		class Obj {
-			constructor(a, b) {
-				this.a = a;
-				this.b = b;
-			}
-			toString() {
-				return `${this.a.toString()}:${this.b.toString()}`;
-			}
-		}
+		queue.enqueue(new CustomObj(1, 2));
+		expect(queue.toString()).to.equal('1|2');
 
-		queue.enqueue(new Obj(1, 2));
-		expect(queue.toString()).to.equal('1:2');
-
-		queue.enqueue(new Obj(3, 4));
-		expect(queue.toString()).to.equal('1:2,3:4');
+		queue.enqueue(new CustomObj(3, 4));
+		expect(queue.toString()).to.equal('1|2,3|4');
 	});
 });

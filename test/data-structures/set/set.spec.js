@@ -1,6 +1,7 @@
 require('mocha');
 const { expect } = require('chai');
 const Set = require('../../../src/data-structures/set/set');
+const { CustomObj } = require('../../utils');
 
 describe('Set', () => {
 	let set;
@@ -131,21 +132,11 @@ describe('Set', () => {
 	it('return string', () => {
 		expect(set.toString()).to.equal('');
 
-		class Obj {
-			constructor(a, b) {
-				this.a = a;
-				this.b = b;
-			}
-			toString() {
-				return `${this.a.toString()}:${this.b.toString()}`;
-			}
-		}
+		set.add(new CustomObj(1, 2));
+		expect(set.toString()).to.equal('1|2');
 
-		set.add(new Obj(1, 2));
-		expect(set.toString()).to.equal('1:2');
-
-		set.add(new Obj(3, 4));
-		expect(set.toString()).to.equal('1:2,3:4');
+		set.add(new CustomObj(3, 4));
+		expect(set.toString()).to.equal('1|2,3|4');
 	});
 
 	/**

@@ -2,6 +2,7 @@ require('mocha');
 const { expect } = require('chai');
 const CircularLinkedList = require('../../../src/data-structures/linked-list/circular-linked-list');
 const { defaultEquals } = require('../../../src/utils');
+const { CustomObj } = require('../../utils');
 
 describe('Circular Linked List', () => {
 	let list;
@@ -305,20 +306,10 @@ describe('Circular Linked List', () => {
 	it('return string', () => {
 		expect(list.toString()).to.equal('');
 
-		class Obj {
-			constructor(a, b) {
-				this.a = a;
-				this.b = b;
-			}
-			toString() {
-				return `${this.a.toString()}:${this.b.toString()}`;
-			}
-		}
+		list.push(new CustomObj(1, 2));
+		expect(list.toString()).to.equal('1|2');
 
-		list.push(new Obj(1, 2));
-		expect(list.toString()).to.equal('1:2');
-
-		list.push(new Obj(3, 4));
-		expect(list.toString()).to.equal('1:2,3:4');
+		list.push(new CustomObj(3, 4));
+		expect(list.toString()).to.equal('1|2,3|4');
 	});
 });

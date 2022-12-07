@@ -1,5 +1,6 @@
 require('mocha');
 const { expect } = require('chai');
+const { CustomObj } = require('../../utils');
 
 module.exports = function (Stack) {
 	let stack;
@@ -103,20 +104,10 @@ module.exports = function (Stack) {
 	it('return string', () => {
 		expect(stack.toString()).to.equal('');
 
-		class Obj {
-			constructor(a, b) {
-				this.a = a;
-				this.b = b;
-			}
-			toString() {
-				return `${this.a.toString()}:${this.b.toString()}`;
-			}
-		}
+		stack.push(new CustomObj(1, 2));
+		expect(stack.toString()).to.equal('1|2');
 
-		stack.push(new Obj(1, 2));
-		expect(stack.toString()).to.equal('1:2');
-
-		stack.push(new Obj(3, 4));
-		expect(stack.toString()).to.equal('1:2,3:4');
+		stack.push(new CustomObj(3, 4));
+		expect(stack.toString()).to.equal('1|2,3|4');
 	});
 };

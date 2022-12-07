@@ -1,6 +1,7 @@
 require('mocha');
 const { expect } = require('chai');
 const Deque = require('../../../src/data-structures/queue/deque');
+const { CustomObj } = require('../../utils');
 
 describe('Deque', () => {
 	let deque;
@@ -190,23 +191,13 @@ describe('Deque', () => {
 	it('return string', () => {
 		expect(deque.toString()).to.equal('');
 
-		class Obj {
-			constructor(a, b) {
-				this.a = a;
-				this.b = b;
-			}
-			toString() {
-				return `${this.a.toString()}:${this.b.toString()}`;
-			}
-		}
+		deque.addRear(new CustomObj(1, 2));
+		expect(deque.toString()).to.equal('1|2');
 
-		deque.addRear(new Obj(1, 2));
-		expect(deque.toString()).to.equal('1:2');
+		deque.addRear(new CustomObj(3, 4));
+		expect(deque.toString()).to.equal('1|2,3|4');
 
-		deque.addRear(new Obj(3, 4));
-		expect(deque.toString()).to.equal('1:2,3:4');
-
-		deque.addFront(new Obj(-1, 0));
-		expect(deque.toString()).to.equal('-1:0,1:2,3:4');
+		deque.addFront(new CustomObj(-1, 0));
+		expect(deque.toString()).to.equal('-1|0,1|2,3|4');
 	});
 });

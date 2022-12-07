@@ -1,6 +1,7 @@
 require('mocha');
 const { expect } = require('chai');
 const Dictionary = require('../../../src/data-structures/dictionary/dictionary');
+const { CustomObj } = require('../../utils');
 
 describe('Dictionary', () => {
 	let dictionary;
@@ -101,19 +102,9 @@ describe('Dictionary', () => {
 	});
 
 	it('set values with object key (toString has been implemented)', () => {
-		class Obj {
-			constructor(a, b) {
-				this.a = a;
-				this.b = b;
-			}
-			toString() {
-				return `${this.a.toString()}|${this.b.toString()}`;
-			}
-		}
-
 		const objList = [];
 		for (let i = 0; i <= 5; i++) {
-			objList.push(new Obj(i, i));
+			objList.push(new CustomObj(i, i));
 		}
 
 		for (let i = 0; i <= 5; i++) {
@@ -201,21 +192,20 @@ describe('Dictionary', () => {
 	 */
 	it('return string', () => {
 		expect(dictionary.toString()).to.equal('');
+		dictionary.set('a', 'b');
+		expect(dictionary.toString()).to.equal('[#(a):b]');
 
-		class Obj {
-			constructor(a, b) {
-				this.a = a;
-				this.b = b;
-			}
-			toString() {
-				return `${this.a.toString()}|${this.b.toString()}`;
-			}
-		}
+		dictionary.clear();
 
-		dictionary.set(new Obj(1, 2), 'a');
-		expect(dictionary.toString()).to.equal('[#1|2:a]');
+		dictionary.set(1, 2);
+		expect(dictionary.toString()).to.equal('[#(1):2]');
 
-		dictionary.set(new Obj(3, 4), 'b');
-		expect(dictionary.toString()).to.equal('[#1|2:a],[#3|4:b]');
+		dictionary.clear();
+
+		dictionary.set(new CustomObj(1, 2), 'a');
+		expect(dictionary.toString()).to.equal('[#(1|2):a]');
+
+		dictionary.set(new CustomObj(3, 4), 'b');
+		expect(dictionary.toString()).to.equal('[#(1|2):a],[#(3|4):b]');
 	});
 });
