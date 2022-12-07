@@ -1,6 +1,6 @@
 require('mocha');
 const { expect } = require('chai');
-const SortLinkedList = require('../../../src/data-structures/linked-list/sort-linked-list');
+const { SortLinkedList } = require('../../../src/data-structures');
 const { defaultEquals } = require('../../../src/utils');
 const { CustomObj } = require('../../utils');
 

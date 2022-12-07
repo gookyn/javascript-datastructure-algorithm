@@ -1,6 +1,6 @@
 require('mocha');
 const { expect } = require('chai');
-const Deque = require('../../../src/data-structures/queue/deque');
+const { Deque } = require('../../../src/data-structures');
 const { CustomObj } = require('../../utils');
 
 describe('Deque', () => {

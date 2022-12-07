@@ -1,6 +1,6 @@
 require('mocha');
 const { expect } = require('chai');
-const Set = require('../../../src/data-structures/set/set');
+const { Set } = require('../../../src/data-structures');
 const { CustomObj } = require('../../utils');
 
 describe('Set', () => {

@@ -1,6 +1,6 @@
 require('mocha');
 const { expect } = require('chai');
-const Dictionary = require('../../../src/data-structures/dictionary/dictionary');
+const { Dictionary } = require('../../../src/data-structures');
 const { CustomObj } = require('../../utils');
 
 describe('Dictionary', () => {

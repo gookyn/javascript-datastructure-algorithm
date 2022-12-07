@@ -1,6 +1,6 @@
 require('mocha');
 const { expect } = require('chai');
-const CircularLinkedList = require('../../../src/data-structures/linked-list/circular-linked-list');
+const { CircularLinkedList } = require('../../../src/data-structures');
 const { defaultEquals } = require('../../../src/utils');
 const { CustomObj } = require('../../utils');
 

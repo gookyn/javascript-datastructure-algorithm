@@ -1,5 +1,5 @@
 require('mocha');
-const ArrayStack = require('../../../src/data-structures/stack/array-stack');
+const { ArrayStack } = require('../../../src/data-structures');
 const shareCases = require('./share-cases');
 
 describe('Array Stack', () => {

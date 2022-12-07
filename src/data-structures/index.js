@@ -1,0 +1,25 @@
+const Stack = require('./stack/stack');
+const ArrayStack = require('./stack/array-stack');
+const LinkedListStack = require('./stack/linked-list-stack');
+const Queue = require('./queue/queue');
+const Deque = require('./queue/deque');
+const LinkedList = require('./linked-list/linked-list');
+const DoublyLinkedList = require('./linked-list/doubly-linked-list');
+const SortLinkedList = require('./linked-list/sort-linked-list');
+const CircularLinkedList = require('./linked-list/circular-linked-list');
+const Set = require('./set/set');
+const Dictionary = require('./dictionary/dictionary');
+
+module.exports = {
+	Stack,
+	ArrayStack,
+	LinkedListStack,
+	Queue,
+	Deque,
+	LinkedList,
+	DoublyLinkedList,
+	SortLinkedList,
+	CircularLinkedList,
+	Set,
+	Dictionary,
+};
