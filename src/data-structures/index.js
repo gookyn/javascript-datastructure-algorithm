@@ -10,6 +10,7 @@ const CircularLinkedList = require('./linked-list/circular-linked-list');
 const Set = require('./set/set');
 const Dictionary = require('./dictionary/dictionary');
 const HashTable = require('./dictionary/hash-table');
+const HashTableSeparateChaining = require('./dictionary/hash-table');
 
 module.exports = {
 	Stack,
@@ -24,4 +25,5 @@ module.exports = {
 	Set,
 	Dictionary,
 	HashTable,
+	HashTableSeparateChaining,
 };
