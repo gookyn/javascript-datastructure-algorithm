@@ -11,6 +11,7 @@ const Set = require('./set/set');
 const Dictionary = require('./dictionary/dictionary');
 const HashTable = require('./dictionary/hash-table');
 const HashTableSeparateChaining = require('./dictionary/hash-table');
+const HashTableLinearProbing = require('./dictionary/hash-table-linear-probing');
 
 module.exports = {
 	Stack,
@@ -26,4 +27,5 @@ module.exports = {
 	Dictionary,
 	HashTable,
 	HashTableSeparateChaining,
+	HashTableLinearProbing,
 };
