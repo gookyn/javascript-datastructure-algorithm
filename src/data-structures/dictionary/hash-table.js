@@ -29,6 +29,16 @@ class HashTable {
 		return hash % 37;
 	}
 
+	// djb2 散列函数
+	// djb2HashCode(key) {
+	// 	const keyStr = this.toStrFn(key);
+	// 	let hash = 5381;
+	// 	keyStr.split('').forEach(item => {
+	// 		hash = hash * 33 + item.charCodeAt();
+	// 	});
+	// 	return hash % 1013;
+	// }
+
 	hashCode(key) {
 		return this.loseloseHashCode(key);
 	}
