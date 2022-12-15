@@ -21,9 +21,8 @@ class HashTableSeparateChaining extends HashTable {
 			const hashKey = this.hashCode(key);
 			if (this.table[hashKey] == null) {
 				this.table[hashKey] = new LinkedList();
-			} else {
-				this.table[hashKey].push(new ValuePair(key, value));
 			}
+			this.table[hashKey].push(new ValuePair(key, value));
 			return true;
 		}
 		return false;
@@ -34,7 +33,7 @@ class HashTableSeparateChaining extends HashTable {
 		const linkedList = this.table[hashKey];
 		if (linkedList != null && !linkedList.isEmpty()) {
 			let current = linkedList.getHead();
-			while (current.next != null) {
+			while (current != null) {
 				if (current.element.key === key) {
 					return current.element.value;
 				}
@@ -50,7 +49,7 @@ class HashTableSeparateChaining extends HashTable {
 		const linkedList = this.table[hashKey];
 		if (linkedList != null && !linkedList.isEmpty()) {
 			let current = linkedList.getHead();
-			while (current.next != null) {
+			while (current != null) {
 				if (current.element.key === key) {
 					linkedList.remove(current.element);
 					if (linkedList.isEmpty()) {
