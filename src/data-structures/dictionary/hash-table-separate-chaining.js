@@ -1,5 +1,6 @@
 const { defaultToString } = require('../../utils');
-const { HashTable, LinkedList } = require('..');
+const HashTable = require('./hash-table');
+const LinkedList = require('../linked-list/linked-list');
 const { ValuePair } = require('./models');
 
 class HashTableSeparateChaining extends HashTable {
