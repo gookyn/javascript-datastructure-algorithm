@@ -98,7 +98,7 @@ describe('Hash Table', () => {
 		}
 
 		for (let i = 0; i <= 5; i++) {
-			expect(hashTable.get(hashTable.hashCode(`${i}`))).to.equal(i);
+			expect(hashTable.get(`${i}`)).to.equal(i);
 		}
 	});
 
