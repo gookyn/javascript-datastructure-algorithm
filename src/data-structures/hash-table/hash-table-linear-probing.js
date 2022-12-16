@@ -1,6 +1,6 @@
 const { defaultToString } = require('../../utils');
 const HashTable = require('./hash-table');
-const { ValuePair } = require('./models');
+const { ValuePair } = require('../dictionary/models');
 
 class HashTableLinearProbing extends HashTable {
 	constructor(toStrFn = defaultToString) {

@@ -9,9 +9,9 @@ const SortLinkedList = require('./linked-list/sort-linked-list');
 const CircularLinkedList = require('./linked-list/circular-linked-list');
 const Set = require('./set/set');
 const Dictionary = require('./dictionary/dictionary');
-const HashTable = require('./dictionary/hash-table');
-const HashTableSeparateChaining = require('./dictionary/hash-table-separate-chaining');
-const HashTableLinearProbing = require('./dictionary/hash-table-linear-probing');
+const HashTable = require('./hash-table/hash-table');
+const HashTableSeparateChaining = require('./hash-table/hash-table-separate-chaining');
+const HashTableLinearProbing = require('./hash-table/hash-table-linear-probing');
 
 module.exports = {
 	Stack,
