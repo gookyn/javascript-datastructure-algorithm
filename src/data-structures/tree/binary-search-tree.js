@@ -50,9 +50,11 @@ class BinarySearchTree {
 	}
 
 	preOrderTraverseNode(node, callback) {
-		callback(node.key);
-		this.preOrderTraverseNode(node.left, callback);
-		this.preOrderTraverseNode(node.right, callback);
+		if (node != null) {
+			callback(node.key);
+			this.preOrderTraverseNode(node.left, callback);
+			this.preOrderTraverseNode(node.right, callback);
+		}
 	}
 
 	// 后序遍历
@@ -61,9 +63,11 @@ class BinarySearchTree {
 	}
 
 	postOrderTraverseNode(node, callback) {
-		this.postOrderTraverseNode(node.left, callback);
-		this.postOrderTraverseNode(node.right, callback);
-		callback(node.key);
+		if (node != null) {
+			this.postOrderTraverseNode(node.left, callback);
+			this.postOrderTraverseNode(node.right, callback);
+			callback(node.key);
+		}
 	}
 
 	min() {
@@ -147,6 +151,10 @@ class BinarySearchTree {
 			node.right = this.removeNode(node.right, aux.key);
 			return node;
 		}
+	}
+
+	getRoot() {
+		return this.root;
 	}
 }
 
