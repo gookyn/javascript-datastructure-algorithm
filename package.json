@@ -1,5 +1,5 @@
 {
-	"name": "javascript-data-structure-and-algorithm",
+	"name": "javascript-datastructure-algorithm",
 	"version": "1.0.0",
 	"description": "JavaScript Data Structure and Algorithm",
 	"scripts": {
@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/gookyn/javascript-data-structure-and-algorithm.git"
+		"url": "git+https://github.com/gookyn/javascript-datastructure-algorithm.git"
 	},
 	"keywords": [
 		"JavaScript",
@@ -21,9 +21,9 @@
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/gookyn/javascript-data-structure-and-algorithm/issues"
+		"url": "https://github.com/gookyn/javascript-datastructure-algorithm/issues"
 	},
-	"homepage": "https://github.com/gookyn/javascript-data-structure-and-algorithm#readme",
+	"homepage": "https://github.com/gookyn/javascript-datastructure-algorithm#readme",
 	"devDependencies": {
 		"chai": "^4.3.7",
 		"codecov": "^3.8.3",
