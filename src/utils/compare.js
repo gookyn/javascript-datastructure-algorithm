@@ -14,7 +14,12 @@ function defaultCompare(a, b) {
 	}
 }
 
+function reverseCompare(compareFn) {
+	return (a, b) => compareFn(b, a);
+}
+
 module.exports = {
 	COMPARE,
 	defaultCompare,
+	reverseCompare,
 };

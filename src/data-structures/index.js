@@ -14,6 +14,7 @@ const HashTableSeparateChaining = require('./hash-table/hash-table-separate-chai
 const HashTableLinearProbing = require('./hash-table/hash-table-linear-probing');
 const BinarySearchTree = require('./tree/binary-search-tree');
 const AVLTree = require('./tree/avl-tree');
+const { MinHeap, MaxHeap } = require('./tree/heap');
 
 module.exports = {
 	Stack,
@@ -32,4 +33,6 @@ module.exports = {
 	HashTableLinearProbing,
 	BinarySearchTree,
 	AVLTree,
+	MinHeap,
+	MaxHeap,
 };
