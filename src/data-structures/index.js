@@ -15,6 +15,7 @@ const HashTableLinearProbing = require('./hash-table/hash-table-linear-probing')
 const BinarySearchTree = require('./tree/binary-search-tree');
 const AVLTree = require('./tree/avl-tree');
 const { MinHeap, MaxHeap } = require('./tree/heap');
+const Graph = require('./graph/graph');
 
 module.exports = {
 	Stack,
@@ -35,4 +36,5 @@ module.exports = {
 	AVLTree,
 	MinHeap,
 	MaxHeap,
+	Graph,
 };
