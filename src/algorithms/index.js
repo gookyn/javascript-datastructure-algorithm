@@ -4,6 +4,7 @@ const { depthFirstSearch, DFS } = require('./graph/depth-first-search');
 const dijkstra = require('./graph/dijkstra');
 const floydWarshall = require('./graph/floyd-warshall');
 const prim = require('./graph/prim');
+const kruskal = require('./graph/kruskal');
 
 module.exports = {
 	heapSort,
@@ -14,4 +15,5 @@ module.exports = {
 	dijkstra,
 	floydWarshall,
 	prim,
+	kruskal,
 };
